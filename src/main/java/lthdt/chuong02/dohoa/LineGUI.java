@@ -52,7 +52,7 @@ public class LineGUI extends javax.swing.JFrame {
             .addGap(0, 322, Short.MAX_VALUE)
         );
 
-        btnVeDuongThang.setText("Vẻ đường thẳng ngẫu nhiên");
+        btnVeDuongThang.setText("Vẽ đường thẳng ngẫu nhiên");
         btnVeDuongThang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVeDuongThangActionPerformed(evt);
@@ -90,16 +90,17 @@ public class LineGUI extends javax.swing.JFrame {
          Random rnd = new Random();
          Graphics2D gr =(Graphics2D) pnPanel.getGraphics();
          int maxX  = pnPanel.getWidth();
-         int maxY  =pnPanel.getHeight();
-         Line line = new Line();
-         DrawLine dl= new DrawLine();
+         int maxY  = pnPanel.getHeight();
+//         Line line = new Line();
+//         DrawLine dl= new DrawLine();
          for(int i = 0;i<100;i++){
-            
+            Line line = new Line();
              line.setBegin_x(rnd.nextInt(maxX));
              line.setBegin_y(rnd.nextInt(maxY));
              line.setEnd_x(rnd.nextInt(maxX));
              line.setEnd_y(rnd.nextInt(maxY));
-         dl.setLine(line);
+             DrawLine dl= new DrawLine(gr, line);
+//         dl.setLine(line);
          dl.veDuongThang();
          
          }

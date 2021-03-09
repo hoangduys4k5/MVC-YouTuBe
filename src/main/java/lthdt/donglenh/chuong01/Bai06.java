@@ -25,7 +25,7 @@ public class Bai06 {
                 + person.getGioitinh()+";Ngay sinh:"+df.format(person.getNgaysinh()));
         
         
-        Student sinhvien = new Student("PXU", "Nguyen Van B", 1, ngaysinh);
+        Student sinhvien = new Student("TDTU", "Nguyen Van B", 1, ngaysinh);
         System.out.println("Truong hoc : "+sinhvien.getTruonghoc()+";Ho ten : "+
                 sinhvien.getHoten()+";Gioi tinh :"+sinhvien.getGioitinh()+";Ngay sinh: "
                 + df.format(sinhvien.getNgaysinh()));

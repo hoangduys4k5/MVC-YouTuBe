@@ -42,7 +42,7 @@ public class pheptoan {
 //    System.out.println("Phep NOT "+(!flag1));
 //    System.out.println("Phep XOR "+(flag1 ^ flag3));
     // mot so phep toan co ban tren chuoi
-    String s1 =" Phu Xuan University";
+    String s1 =" Hue University";
     String s2 ="  university";
     
     System.out.println(s1.toLowerCase());
