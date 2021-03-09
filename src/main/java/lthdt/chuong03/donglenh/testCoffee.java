@@ -14,7 +14,7 @@ import lthdt.chuong03.dohoa.conffeelogic.Manager;
 
 /**
  *
- * @author ASUS
+ * @author Admin
  */
 public class testCoffee {
 
@@ -23,16 +23,16 @@ public class testCoffee {
      */
     public static void main(String[] args) throws ParseException {
         // TODO code application logic here
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy",Locale.ENGLISH);
-        CoffeeShop[] a = new CoffeeShop[]{new CoffeeShop("Kha Coffer","2 Nguyen Hue"),new CoffeeShop("White garden","4 Nguyen Hue"),
-        new CoffeeShop("Hoang Gia Vien", "10 Tran Hung Dao")};
-        Manager[] managers = new Manager[]{
-            new Manager(a,1000,"Le Thi A",0,df.parse("12-12-1999")),
-            new Manager(new CoffeeShop[]{
-            new CoffeeShop("Hoang Hac","5 hai ba trung")
-            },
-                    2000,"Nguyen Van B",1,df.parse("12-12-2000"))
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+        CoffeeShop[]a = new CoffeeShop[]{new CoffeeShop("Kha coffee ","2 Nguyen Hue"),
+                                            new CoffeeShop("tset caphe","176 trna phu")};
+        Manager[] managers= new Manager[]{
+                    new Manager(a,1000,"le thi A",0,df.parse("12-12-1999")),
+                    new Manager(new CoffeeShop[]{
+                                                  new CoffeeShop("haong ha ","12nguyen hue")},
+                            2000,"nguyen van b",1,df.parse("12-12-2000"))
         };
+        
         System.out.println(Arrays.toString(managers));
     }
     

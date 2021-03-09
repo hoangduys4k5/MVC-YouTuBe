@@ -10,14 +10,15 @@ import java.util.Date;
 
 /**
  *
- * @author ASUS
+ * @author Admin
  */
-public class Manager extends Person {
+public class Manager extends Person{
     private CoffeeShop[] shops;
     private double income;
 
     public Manager() {
         super();
+        
     }
 
     public Manager(CoffeeShop[] shops, double income, String hoten, int gioitinh, Date ngaysinh) {
@@ -30,12 +31,12 @@ public class Manager extends Person {
         return shops;
     }
 
-    public double getIncome() {
-        return income;
-    }
-
     public void setShops(CoffeeShop[] shops) {
         this.shops = shops;
+    }
+
+    public double getIncome() {
+        return income;
     }
 
     public void setIncome(double income) {
@@ -44,11 +45,11 @@ public class Manager extends Person {
 
     @Override
     public String toString() {
-        String ketqua = super.toString();
-        ketqua += "Manager{" + "shops=" + Arrays.deepToString(shops) + ", income=" + income + '}';
-        return ketqua;
+        String ketqua =     super.toString();
+      ketqua += "Manager{" + "shops=" + Arrays.deepToString(shops) + ", income=" + income + '}';
+      return ketqua;
     }
-
- 
-   
+    
+    
+    
 }

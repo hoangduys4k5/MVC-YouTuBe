@@ -5,7 +5,6 @@
  */
 package lthdt.chuong03.dohoa;
 
-import static java.awt.SystemColor.desktop;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,11 +13,11 @@ import lthdt.chuong03.dohoa.frames.XuatDuLieuFrame;
 
 /**
  *
- * @author ASUS
+ * @author Admin
  */
 public class MyMainForm extends javax.swing.JFrame {
- XuatDuLieuFrame frm;
- MyCoffee frmCf;
+     XuatDuLieuFrame frm;
+     MyCoffee frmCf;
     /**
      * Creates new form MyMainForm
      */
@@ -44,16 +43,17 @@ public class MyMainForm extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Chương trình thao tac với mảng 1 chiều");
 
         javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
         desktop.setLayout(desktopLayout);
         desktopLayout.setHorizontalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 694, Short.MAX_VALUE)
+            .addGap(0, 549, Short.MAX_VALUE)
         );
         desktopLayout.setVerticalGroup(
             desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 424, Short.MAX_VALUE)
+            .addGap(0, 538, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -69,11 +69,6 @@ public class MyMainForm extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Mảng");
-        jMenu2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu2ActionPerformed(evt);
-            }
-        });
 
         jMenuItem1.setText("Mảng 1 chiều");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +94,9 @@ public class MyMainForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktop)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(desktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,37 +107,36 @@ public class MyMainForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        if(frm == null || frm.isClosed()){
-        frm = new XuatDuLieuFrame();
-        desktop.add(frm);
-        frm.setLocation(this.getWidth()/2 - frm.getWidth()/2,this.getHeight()/2 - frm.getHeight()/2);
-        frm.setVisible(true);
-        }
+      if(frm==null||frm.isClosed()){
+           frm = new XuatDuLieuFrame();
+            desktop.add(frm);
+            frm.setLocation(this.getWidth()/2-frm.getWidth()/2,
+                    this.getHeight()/2-frm.getHeight()/2);
+            frm.setVisible(true);
+      
+      }
+     
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
+                // TODO add your handling code here:
+           System.exit(0);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
-    private void jMenu2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenu2ActionPerformed
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
-         if(frmCf == null || frmCf.isClosed()){
-             try {
-                 frmCf = new MyCoffee();
-                 desktop.add(frmCf);
-                 frmCf.setLocation(this.getWidth()/2 - frmCf.getWidth()/2,this.getHeight()/2 - frmCf.getHeight()/2);
-                 frmCf.setVisible(true);
-             } catch (ParseException ex) {
-                 Logger.getLogger(MyMainForm.class.getName()).log(Level.SEVERE, null, ex);
-             }
-        }
-    
+                 if(frmCf==null||frmCf.isClosed()){
+                     try {
+                         frmCf = new MyCoffee();
+                         desktop.add(frmCf);
+                         frmCf.setLocation(this.getWidth()/2-frmCf.getWidth()/2,
+                                 this.getHeight()/2-frmCf.getHeight()/2);
+                         frmCf.setVisible(true);
+                     } catch (ParseException ex) {
+                         Logger.getLogger(MyMainForm.class.getName()).log(Level.SEVERE, null, ex);
+                     }
+      
+      }
+         
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**

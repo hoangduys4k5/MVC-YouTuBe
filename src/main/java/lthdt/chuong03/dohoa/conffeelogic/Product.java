@@ -9,16 +9,16 @@ package lthdt.chuong03.dohoa.conffeelogic;
  *
  * @author Admin
  */
-public class CoffeeShop {
-    private String name ;
-    private String address;
+public class Product {
+    private String name;
+    private double price;
 
-    public CoffeeShop() {
+    public Product() {
     }
 
-    public CoffeeShop(String name, String address) {
+    public Product(String name, double price) {
         this.name = name;
-        this.address = address;
+        this.price = price;
     }
 
     public String getName() {
@@ -29,17 +29,17 @@ public class CoffeeShop {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public double getPrice() {
+        return price;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "CofeeShope{" + "name=" + name + ", address=" + address + '}';
+        return "Product{" + "name=" + name + ", price=" + price + '}';
     }
     
     

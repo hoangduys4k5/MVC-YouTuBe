@@ -12,37 +12,43 @@ import javax.swing.table.DefaultTableModel;
 import lthdt.chuong03.dohoa.conffeelogic.CoffeeShop;
 import lthdt.chuong03.dohoa.conffeelogic.Manager;
 
+
 /**
  *
- * @author ASUS
+ * @author Admin
  */
 public class MyCoffee extends javax.swing.JInternalFrame {
-     Manager[] managers;
+         Manager[] managers;
     /**
      * Creates new form MyCoffee
      */
     public MyCoffee() throws ParseException {
+        
         initComponents();
-         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy",Locale.ENGLISH);
-        CoffeeShop[] a = new CoffeeShop[]{new CoffeeShop("Kha Coffer","2 Nguyen Hue"),new CoffeeShop("White garden","4 Nguyen Hue"),
-        new CoffeeShop("Hoang Gia Vien", "10 Tran Hung Dao")};
-         managers = new Manager[]{
-            new Manager(a,1000,"Le Thi A",0,df.parse("12-12-1999")),
-            new Manager(new CoffeeShop[]{
-            new CoffeeShop("Hoang Hac","5 hai ba trung")
-            },
-                    2000,"Nguyen Van C",1,df.parse("12-12-2000"))
+          SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+        CoffeeShop[]a = new CoffeeShop[]{new CoffeeShop("Kha coffee ","2 Nguyen Hue"),
+                                            new CoffeeShop("tset caphe","176 trna phu")};
+        managers= new Manager[]{
+                    new Manager(a,1000,"le thi A",0,df.parse("12-12-1999")),
+                    new Manager(new CoffeeShop[]{
+                                                  new CoffeeShop("haong ha ","12nguyen hue")},
+                            2000,"nguyen van b",1,df.parse("12-12-2000"))
         };
-        for(int i =0;i< managers.length ;i++){
+        for(int i =0 ;i < managers.length ;i++){
             cbQuanLy.addItem(managers[i].getHoten());
+        
         }
         DefaultTableModel model = (DefaultTableModel) tblCoffeeShop.getModel();
         model.setRowCount(0);
-        CoffeeShop[] shops = managers[0].getShops();
-        for(int i=1; i < shops.length;i++){
-            model.insertRow(model.getRowCount(), new Object[]{model.getRowCount()+1,shops[i].getName(),
-            shops[i].getAddress()});
+        CoffeeShop[]shops=managers[0].getShops();
+        for(int i =0 ;i<shops.length;i++){
+            model.insertRow(model.getRowCount(),
+                    new Object[]{model.getRowCount()+1,
+                                shops[i].getName(),
+                                shops[i].getAddress()});
+        
         }
+        
         
     }
 
@@ -60,9 +66,11 @@ public class MyCoffee extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCoffeeShop = new javax.swing.JTable();
 
+        setClosable(true);
+        setMaximizable(true);
         setTitle("Danh sách các quán cà phê");
 
-        jLabel1.setText("Họ tên người quản lý");
+        jLabel1.setText("Họ tên người quản lí");
 
         cbQuanLy.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -85,14 +93,14 @@ public class MyCoffee extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbQuanLy, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(cbQuanLy, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,9 +109,9 @@ public class MyCoffee extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(cbQuanLy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -111,13 +119,16 @@ public class MyCoffee extends javax.swing.JInternalFrame {
 
     private void cbQuanLyItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbQuanLyItemStateChanged
         // TODO add your handling code here:
-         DefaultTableModel model = (DefaultTableModel) tblCoffeeShop.getModel();
+        DefaultTableModel model = (DefaultTableModel) tblCoffeeShop.getModel();
         model.setRowCount(0);
         int index = cbQuanLy.getSelectedIndex();
-        CoffeeShop[] shops = managers[index].getShops();
-        for(int i=1; i < shops.length;i++){
-            model.insertRow(model.getRowCount(), new Object[]{model.getRowCount()+1,shops[i].getName(),
-            shops[i].getAddress()});
+        CoffeeShop[]shops=managers[index].getShops();
+        for(int i =0 ;i<shops.length;i++){
+            model.insertRow(model.getRowCount(),
+                    new Object[]{model.getRowCount()+1,
+                                shops[i].getName(),
+                                shops[i].getAddress()});
+        
         }
     }//GEN-LAST:event_cbQuanLyItemStateChanged
 
